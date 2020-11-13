@@ -1,7 +1,10 @@
 package main;
 
+import java.beans.XMLEncoder;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 
 public class list {
@@ -22,17 +25,17 @@ public class list {
         System.out.println("6 Поиск подстроки в строках");
         System.out.println("7 Считать текстовый файл");
         System.out.println("8 Длины строк");
-
-        System.out.println("Введите ваш выбор");
+        System.out.println("9 Выгрузка в xml");
 
         do {
+            System.out.println("Введите ваш выбор");
             choice=scan.nextInt();
             switch (choice) {
                 case 1:
                     System.out.println("Введите новый элемент");
                     Scanner novoe = new Scanner(System.in);
                     String addtext = novoe.nextLine();
-                    laba8.add(1, addtext);
+                    laba8.add( addtext);
                     System.out.println(laba8);
                     break;
 
@@ -79,14 +82,14 @@ public class list {
                     Scanner dev=new Scanner(System.in);
                     String podstr=dev.nextLine();
 
+                        if(laba8.get(0).contains(podstr))
+                        System.out.println("Подстрока найдена в строке "+laba8.get(0));
+
                         if(laba8.get(1).contains(podstr))
-                        System.out.println("Подстрока найдена в строке "+laba8.get(1));
+                        System.out.println("Подстрока найдена в строке " +laba8.get(1));
 
                         if(laba8.get(2).contains(podstr))
-                        System.out.println("Подстрока найдена в строке " +laba8.get(2));
-
-                        if(laba8.get(3).contains(podstr))
-                        System.out.println("Подстрока найдена в строке " + laba8.get(3));
+                        System.out.println("Подстрока найдена в строке " + laba8.get(2));
                     break;
 
                 case 7:
@@ -97,9 +100,24 @@ public class list {
                     break;
 
                 case 8:
-                    System.out.println("Длина первой строки = "+laba8.get(1).length());
-                    System.out.println("Длина второй строки = "+laba8.get(2).length());
-                    System.out.println("Длина третьей строки = "+laba8.get(3).length());
+                    System.out.println("Длина первой строки = "+laba8.get(0).length());
+                    System.out.println("Длина второй строки = "+laba8.get(1).length());
+                    System.out.println("Длина третьей строки = "+laba8.get(2).length());
+                    System.out.println("Длина четвертой строки = "+laba8.get(3).length());
+                    break;
+
+                case 9:
+                    laba8st p1 =new laba8st(laba8.get(0),laba8.get(1),laba8.get(2),laba8.get(3));
+                    try {
+                        FileOutputStream fos=new FileOutputStream(new File("./laba8list.xml"));
+                        XMLEncoder encoder=new XMLEncoder(fos);
+                        encoder.writeObject(p1);
+                        encoder.close();
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("Успешно");
                     break;
 
                 default:

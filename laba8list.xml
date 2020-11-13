@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="13.0.1" class="java.beans.XMLDecoder">
+ <object class="main.laba8st">
+  <void property="stroka1">
+   <string>строка 2</string>
+  </void>
+  <void property="stroka2">
+   <string>строка 1</string>
+  </void>
+  <void property="stroka3">
+   <string>laba8</string>
+  </void>
+  <void property="stroka4">
+   <string>stroka iz faila</string>
+  </void>
+ </object>
+</java>
