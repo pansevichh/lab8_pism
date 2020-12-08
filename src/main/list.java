@@ -93,7 +93,7 @@ public class list {
                     break;
 
                 case 7:
-                    Scanner s =new Scanner(new File("C:\\Users\\Andrey\\Desktop\\Git\\text.txt"));
+                    Scanner s =new Scanner(new File("C:\\Users\\Luban\\Desktop\\text.txt"));
                     String bla=s.nextLine();
                     laba8.add(bla);
                     System.out.println(laba8);
