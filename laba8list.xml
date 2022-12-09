@@ -2,16 +2,16 @@
 <java version="15.0.1" class="java.beans.XMLDecoder">
  <object class="main.laba8st">
   <void property="stroka1">
-   <string>laba8</string>
+   <string>Olegovich</string>
   </void>
   <void property="stroka2">
-   <string>sas</string>
+   <string>Kosmachevsky</string>
   </void>
   <void property="stroka3">
-   <string>asf</string>
+   <string>Stefan</string>
   </void>
   <void property="stroka4">
-   <string>dgh</string>
+   <string>laba8</string>
   </void>
  </object>
 </java>
